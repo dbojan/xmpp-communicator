@@ -114,7 +114,4 @@ import SharedPreferences PreferenceManager (pref manager, use AndroidX)
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
-    public void onConversationSelected(Conversation conversation) {
-        clearPendingViewIntent();
 ```
