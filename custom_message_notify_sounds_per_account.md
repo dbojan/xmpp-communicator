@@ -170,7 +170,7 @@
 
 +        final Builder notificationBuilder = new NotificationCompat.Builder(mXmppConnectionService, channel);
 
-        //old code, continue
++        //old code, continue
 
         notificationBuilder.setLargeIcon(
                 mXmppConnectionService
