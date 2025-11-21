@@ -2,7 +2,7 @@
 
 2025-11-21-1
 
-**Fork of conversations xmpp app**
+**Fork of conversations xmpp app (https://codeberg.org/iNPUTmice/Conversations)**
 
 **APK with added features**  
 App name is still conversations, so it will overwrite you current installation.  
@@ -10,18 +10,13 @@ You might want to use another device for testing.
 link to apk file and modified sources: https://drive.google.com/drive/folders/1u-bBpRwNtcxRyvKruBPtkRy73MG1qzbu?usp=sharing  
 
 Added features:  
-![](xmpp_accounts_small.png) ![](xmpp_small_chat_colors.png)
 
-
+- you can toggle xmpp accounts from the main menu
 - different chat colors based on which account recieved the message  
-- you can toggle xmpp account from the main menu
 - different sounds per account, for recieved messages
 
-**How to edit source files:**
+![](xmpp_accounts_small.png) ![](xmpp_small_chat_colors.png)
 
--download android studio  
--open https://codeberg.org/iNPUTmice/Conversations in android studio.  
--edit some files, and send app to device, by pressing play in android studio.  
 
 -since github is brainded when it comes to adding colors to text, remove + in front of green (added) lines. sorry.  
 
