@@ -13,3 +13,16 @@ fork of conversations xmpp app
 
 [custom_message_notify_sounds_per_account.md](custom_message_notify_sounds_per_account.md)
 
+how to open file in android studio:
+- open doap file in android studio
+- add configuration
+- edit configuration
+- click on + (add new configuration), select android app
+
+- enter configuration name: test
+- module: conversations
+- deploy: default apk
+- ok
+
+- connect phone to pc,
+- click on play
