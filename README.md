@@ -2,7 +2,7 @@
 
 2025-11-21-1
 
-**Fork of conversations xmpp app (https://codeberg.org/iNPUTmice/Conversations)**
+**Fork of conversations xmpp app (https://codeberg.org/iNPUTmice/Conversations), with some added features**
 
 **APK with added features**  
 App name is still conversations, so it will overwrite you current installation.  
