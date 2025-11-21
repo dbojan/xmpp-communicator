@@ -7,7 +7,7 @@
 **APK with added features**  
 App name is still conversations, so it will overwrite you current installation.  
 You might want to use another device for testing.  
-link to apk file: https://drive.google.com/drive/folders/1u-bBpRwNtcxRyvKruBPtkRy73MG1qzbu?usp=sharing  
+link to apk file and modified sources: https://drive.google.com/drive/folders/1u-bBpRwNtcxRyvKruBPtkRy73MG1qzbu?usp=sharing  
 
 Added features:  
 (pictures soon)  
