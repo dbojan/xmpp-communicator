@@ -14,8 +14,8 @@ Added features:
 
 
 - different chat colors based on which account recieved the message  
-- different sounds per account, for recieved messages
 - you can toggle xmpp account from the main menu
+- different sounds per account, for recieved messages
 
 **How to edit source files:**
 
