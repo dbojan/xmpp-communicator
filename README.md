@@ -10,8 +10,7 @@ You might want to use another device for testing.
 link to apk file and modified sources: https://drive.google.com/drive/folders/1u-bBpRwNtcxRyvKruBPtkRy73MG1qzbu?usp=sharing  
 
 Added features:  
-![](xmpp_accounts_small.png)  
-![](xmpp_small_chat_colors.png)
+![](xmpp_accounts_small.png) ![](xmpp_small_chat_colors.png)
 
 
 - different chat colors based on which account recieved the message  
