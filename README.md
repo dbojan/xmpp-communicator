@@ -7,7 +7,7 @@ fork of conversations xmpp app
 
 -since github is brainded when it comes to adding colors to text, remove + in front of green (added) lines. sorry.  
 
-(add_colors.md)[add_colors.md]
+[add_colors.md](add_colors.md)
 
 [How to use **different colors** in chat, based on accounts:  
 
