@@ -8,6 +8,8 @@ fork of conversations xmpp app
 -since github is brainded when it comes to adding colors to text, remove + in front of green (added) lines. sorry.  
 
 [add_colors.md](add_colors.md)
+[toggle_accounts.md](toggle_accounts.md))
+
 
 
 **toggle accounts** from the main menu:
@@ -130,8 +132,6 @@ import SharedPreferences PreferenceManager (pref manager, use AndroidX)
     public void onConversationSelected(Conversation conversation) {
         clearPendingViewIntent();
 ```
-
-
 
 
 
