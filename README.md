@@ -11,5 +11,5 @@ fork of conversations xmpp app
 
 [toggle_accounts.md](toggle_accounts.md)
 
-[custom_message_notify_sounds_per_account.md](ustom_message_notify_sounds_per_account.md)
+[custom_message_notify_sounds_per_account.md](custom_message_notify_sounds_per_account.md)
 
