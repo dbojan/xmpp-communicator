@@ -10,7 +10,11 @@ You might want to use another device for testing.
 link to apk file and modified sources: https://drive.google.com/drive/folders/1u-bBpRwNtcxRyvKruBPtkRy73MG1qzbu?usp=sharing  
 
 Added features:  
-(pictures soon)  
+!(xmpp_accounts_small.png)  
+
+
+
+
 
 - different chat colors based on which account recieved the message  
 - different sounds per account, for recieved messages
@@ -46,3 +50,12 @@ Added features:
 
 - connect phone to pc,
 - click on play
+
+**Ogg files**
+
+you can create them using ffmpeg
+
+`ffmpeg -i input.mp3 -q:a 9 message1.ogg`
+
+
+
