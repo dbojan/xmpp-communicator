@@ -17,10 +17,9 @@ Added features:
 
 ![](xmpp_accounts_small.png) ![](xmpp_small_chat_colors.png)
 
+**how to add these features yourself:**  
 
 -since github is braindead when it comes to adding colors to text, remove + in front of green (added) lines. sorry.  
-
-**how to add these features yourself:**  
 
 [add_colors.md](add_colors.md)
 
