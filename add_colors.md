@@ -10,7 +10,7 @@ How to use **different colors** in chat, based on accounts:
     <string name="action_settings">Settings</string>
 ```
 
-2. add to add to /home/b/StudioProjects/Conversations/src/main/res/xml/preferences_interface.xml:
+2. edit /home/b/StudioProjects/Conversations/src/main/res/xml/preferences_interface.xml:
 
 ```diff
 <?xml version="1.0" encoding="utf-8"?>
