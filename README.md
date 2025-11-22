@@ -9,11 +9,13 @@ App name is still conversations, so it will overwrite you current installation.
 You might want to use another device for testing.  
 link to apk file and modified sources: https://drive.google.com/drive/folders/1u-bBpRwNtcxRyvKruBPtkRy73MG1qzbu?usp=sharing  
 
+**Make sure you grant storage permission in app properties**
+
 Added features:  
 
 - you can toggle xmpp accounts from the main menu
 - different chat colors based on which account recieved the message  
-- different sounds per account, for recieved messages
+- different sounds per account, for recieved messages (this was done so it can be used on older android phones. It checks for Notifications/message1.ogg for account1, message2.off for account2 ...)
 
 ![](xmpp_accounts_small.png) ![](xmpp_small_chat_colors.png)
 
