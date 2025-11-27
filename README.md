@@ -50,5 +50,9 @@ you can create them using ffmpeg
 
 `ffmpeg -i input.mp3 -q:a 9 message1.ogg`
 
+**Licence**
 
+Since conversations is relaeased under GPL 3, I gueess this is too. 
+
+I wouldn't mind BSD either.
 
