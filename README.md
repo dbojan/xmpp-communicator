@@ -1,6 +1,6 @@
 # xmpp-communicator
 
-2025-11-21-1
+2025-11-29-1
 
 **Fork of conversations xmpp app (https://codeberg.org/iNPUTmice/Conversations), with some added features**
 
@@ -17,7 +17,7 @@ Added features:
 - different chat colors based on which account recieved the message  
 - different sounds per account, for recieved messages (this was done so it can be used on older android phones. It uses Notifications/message1.ogg for account1, message2.off for account2 ...)
 
-![](pic_small_accounts.png) ![](pic_small_colors.png)
+![](pic_small_colors.png) ![](pic_small_accounts.png) 
 
 **Hhow to add these features yourself:**  
 
@@ -55,4 +55,12 @@ you can create them using ffmpeg
 Since conversations is relaeased under GPL 3, I gueess this is too. 
 
 I wouldn't mind BSD either.
+
+changes
+
+2025-11-29-1  
+- reworked colors for chat, so number of account based colors is unlimited.
+    
+
+
 
