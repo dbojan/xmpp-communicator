@@ -32,6 +32,7 @@ Added features:
 
 **How to open source project in android studio:**  
 - open doap file in android studio
+- click on "Conversations" in the middle of the screen, on the top
 - add configuration
 - edit configuration
 - click on + (add new configuration), select android app
@@ -43,6 +44,17 @@ Added features:
 
 - connect phone to pc,
 - click on play
+
+**How to create/build apk**
+
+- (you should delete build folder inside conversations folder first)
+- click ||| menu
+- select "Build" menu on the top right 
+- generate app bundles or apk
+- generate apk
+- look in /home/b/StudioProjects/Conversations/build/outputs/apk/conversationsFree/debug/
+
+
 
 **Ogg files**
 
