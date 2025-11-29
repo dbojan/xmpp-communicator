@@ -60,45 +60,50 @@ How to use **different colors** in chat, based on accounts:
 
 +    //added  for diff colors
 +    private int getColorForAccount(Account account) {
-+        // Detect if system is in dark theme
-+        int nightModeFlags;
-+        nightModeFlags = activity.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
++        // 1. Get Index
++        int accountIndex = 0;
++        if (activity != null && activity.xmppConnectionService != null) {
++            accountIndex = activity.xmppConnectionService.getAccounts().indexOf(account);
++            if (accountIndex < 0) accountIndex = 0;
++        }
+
++        // 2. Determine Hue (Color)
++        // We multiply by a "Golden Angle" (approx 137.5 degrees) to ensure
++        // colors are visually distinct and don't repeat quickly.
++        float goldenAngle = 137.508f;
++        float hueOffset = 240f; // Start at Blue (240 degrees) instead of Red (0 degrees)
+
++        // Applying the offset to shift the entire palette
++        float hue = ( (accountIndex * goldenAngle) + hueOffset ) % 360;
+
++        // Simplified Logic for Dark Mode Value (V) Adjustment
++        // Base Value is 0.65. Range of adjustment is +/- 0.05.
++        float vBase = 0.65f;
++        float vRange = 0.05f;
+
++        // 3. Determine Saturation and Value (Brightness)
++        // Adjust these based on Dark Mode
++        int nightModeFlags = activity.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 +        boolean isDarkMode = (nightModeFlags == Configuration.UI_MODE_NIGHT_YES);
 
-+        // Light theme pastel palette
-+        final int[] lightColors = {
-+                0xFFFFF9C4, // light yellow
-+                0xFFE1F5FE, // light blue
-+                0xFFE8F5E9, // light green
-+                0xFFF3E5F5, // light purple
-+                0xFFFFEBEE, // light red
-+                0xFFFFF3E0, // light orange
-+                0xFFE0F7FA, // light cyan
-+                0xFFF1F8E9, // pale lime
-+                0xFFFBE9E7, // light peach
-+                0xFFEDE7F6  // lavender
-+        };
++        float saturation;
++        float value;
 
-+        // Dark theme palette (muted desaturated tones)
-+        final int[] darkColors = {
-+                0xFF616161, // medium gray
-+                0xFF455A64, // blue gray
-+                0xFF37474F, // dark teal gray
-+                0xFF4E342E, // dark brown
-+                0xFF5D4037, // warm brown
-+                0xFF283593, // indigo
-+                0xFF00695C, // teal
-+                0xFF2E7D32, // dark green
-+                0xFF6A1B9A, // purple
-+                0xFFAD1457  // magenta
-+       };
++        if (isDarkMode) {
++            // Dark Theme: Lower saturation (pastel/muted), Lower brightness
++            saturation = 0.6f;
++            value = 0.65f; //7
++        } else {
++            // Light Theme: Low saturation (pastel), High brightness
++            saturation = 0.4f;//0.25
++            value = 0.9f;//1
++        }
 
-+        int index = Math.abs(account.getJid().asBareJid().toString().hashCode())
-+                % lightColors.length;
-
-+        return isDarkMode ? darkColors[index] : lightColors[index];
++        // 4. Generate Color
++        return android.graphics.Color.HSVToColor(new float[]{hue, saturation, value});
 +    }
 
++    //old code
     @Override
     public void onBindViewHolder(@NonNull ConversationViewHolder viewHolder, int position) {
         Conversation conversation = conversations.get(position);
