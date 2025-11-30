@@ -7,6 +7,10 @@ How to use **different colors** in chat, based on accounts:
 <resources>
 +    <string name="pref_use_chat_colors_based_on_accounts_title">Accounts based chat colors</string>
 +    <string name="pref_use_chat_colors_based_on_accounts_summary">Every account uses different color for chats</string>
++    <string name="pref_chat_colors_offset_title">Start color hue in degrees (default blue)</string>
++    <string name="pref_chat_colors_angle_title">Next color difference in degrees</string>
++    <string name="pref_key_chat_colors_offset">chat_colors_hue_offset</string>
++    <string name="pref_key_chat_colors_angle">chat_colors_golden_angle_simulated</string>
     <string name="action_settings">Settings</string>
 ```
 
@@ -28,6 +32,22 @@ How to use **different colors** in chat, based on accounts:
 +			android:title="@string/pref_use_chat_colors_based_on_accounts_title"
 +			android:summary="@string/pref_use_chat_colors_based_on_accounts_summary"
 +			android:defaultValue="true"/>
++        <SeekBarPreference
++            android:key="@string/pref_key_chat_colors_offset"
++            android:title="@string/pref_chat_colors_offset_title"
++            android:defaultValue="240"
++            android:max="360"
++            android:min="0"
++            app:showSeekBarValue="true"
++            android:dependency="use_chat_colors_based_on_accounts" />
++		<SeekBarPreference
++            android:key="@string/pref_key_chat_colors_angle"
++            android:title="@string/pref_chat_colors_angle_title"
++            android:defaultValue="22"
++            android:max="360"
++            android:min="1"
++            app:showSeekBarValue="true"
++            android:dependency="use_chat_colors_based_on_accounts" />
 
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_category_operating_system">
@@ -67,11 +87,20 @@ How to use **different colors** in chat, based on accounts:
 +            if (accountIndex < 0) accountIndex = 0;
 +        }
 
++        // remember to import SharedPreferences class
++        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
+
 +        // 2. Determine Hue (Color)
-+        // We multiply by a "Golden Angle" (approx 137.5 degrees) to ensure
-+        // colors are visually distinct and don't repeat quickly.
-+        float goldenAngle = 22f;//137.508f (make colors more in harmony)
-+        float hueOffset = 240f; // Start at Blue (240 degrees) instead of Red (0 degrees)
++        // SeekBars store integers, so we get Int and cast to float.
++        // The second parameter is the default value if the setting hasn't been touched yet.
+
++        // Get angle preference (matching string key and default value from XML steps above)
++        // was 137.508f before
++        float goldenAngle = (float) prefs.getInt("chat_colors_golden_angle_simulated", 22);
+
++        // Get offset preference
++        // if set to 0 it starts with red
++        float hueOffset = (float) prefs.getInt("chat_colors_hue_offset", 240);
 
 +        // Applying the offset to shift the entire palette
 +        float hue = ( (accountIndex * goldenAngle) + hueOffset ) % 360;
