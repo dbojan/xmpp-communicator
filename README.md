@@ -54,7 +54,6 @@ Added features:
 - look in /home/b/StudioProjects/Conversations/build/outputs/apk/conversationsFree/debug/
 
 
-
 **Ogg files**
 
 you can create them using ffmpeg
