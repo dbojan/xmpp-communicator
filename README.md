@@ -9,7 +9,7 @@ App name is still conversations, so it will overwrite you current installation.
 You might want to use another device for testing.  
 link to apk file and modified sources: https://drive.google.com/drive/folders/1u-bBpRwNtcxRyvKruBPtkRy73MG1qzbu?usp=sharing  
 
-**Make sure you grant storage permission in app properties**
+**Make sure you grant storage permission in app properties** (for sounds)
 
 Added features:  
 
