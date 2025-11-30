@@ -7,7 +7,7 @@ How to use **different colors** in chat, based on accounts:
 <resources>
 +    <string name="pref_use_chat_colors_based_on_accounts_title">Accounts based chat colors</string>
 +    <string name="pref_use_chat_colors_based_on_accounts_summary">Every account uses different color for chats</string>
-+    <string name="pref_chat_colors_offset_title">Start color hue in degrees (default blue)</string>
++    <string name="pref_chat_colors_offset_title">Start color in degrees (default blue)</string>
 +    <string name="pref_chat_colors_angle_title">Next color difference in degrees</string>
 +    <string name="pref_key_chat_colors_offset">chat_colors_hue_offset</string>
 +    <string name="pref_key_chat_colors_angle">chat_colors_golden_angle_simulated</string>
