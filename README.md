@@ -46,7 +46,7 @@ Added features:
 
 **How to create/build apk**
 
-- (you should delete build folder inside conversations folder first)
+- (you should delete 'build' folder inside conversations folder first)
 - click ||| menu
 - select "Build" menu on the top right 
 - generate app bundles or apk
