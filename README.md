@@ -1,6 +1,6 @@
 # xmpp-communicator
 
-2025-11-29-1
+2025-11-30-1
 
 **Fork of conversations xmpp app (https://codeberg.org/iNPUTmice/Conversations), with some added features**
 
@@ -68,6 +68,9 @@ Since conversations is relaeased under GPL 3, I gueess this is too.
 I wouldn't mind BSD either.
 
 changes
+
+2025-11-30-1  
+- more changes in colors
 
 2025-11-29-1  
 - reworked colors for chat, so number of account based colors is unlimited.
