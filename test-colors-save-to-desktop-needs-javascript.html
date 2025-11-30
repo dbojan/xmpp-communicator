@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widescreen Golden Angle Color Simulator (Filled)</title>
+    <style>
+        body { font-family: sans-serif; display: flex; padding: 20px; background-color: #f4f4f9; gap: 30px; min-height: 95vh; margin: 0; }
+        
+        /* Left Column: Controls */
+        #left-column { width: 40%; max-width: 500px; min-width: 400px; }
+        h1 { margin-top: 0; margin-bottom: 5px; }
+        #controls { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .control-section { padding: 10px; border: 1px solid #eee; border-radius: 6px; margin-bottom: 15px; }
+        .control-group { margin-bottom: 10px; }
+        label { display: block; margin-bottom: 3px; font-weight: bold; color: #333; }
+        input[type="range"] { width: 100%; }
+        output { font-weight: normal; margin-left: 10px; color: #007bff; }
+        
+        /* Right Column: Palettes */
+        #right-column { width: 60%; display: flex; gap: 20px; }
+        .theme-palette { flex: 1; padding: 0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; }
+        #light-palette-box { background-color: #ffffff; border: 2px solid #ccc; }
+        #dark-palette-box { background-color: #333333; border: 2px solid #555; }
+        .theme-palette h2 { text-align: center; color: inherit; margin-top: 15px; margin-bottom: 10px; padding: 0 10px; }
+        
+        /* Color Block Style */
+        .color-list { padding: 0; list-style: none; margin: 0; }
+        .color-item { 
+            display: flex; 
+            align-items: center; 
+            padding: 8px 15px; 
+            min-height: 40px;
+        }
+        
+        /* Text color based on theme background */
+        .light-item { color: #333; } 
+        .dark-item { color: #fff; }
+        
+        .color-info strong { font-size: 1.1em; }
+        .color-info span { display: block; font-size: 0.85em; opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+    <div id="left-column">
+        <h1>Golden Angle Simulator</h1>
+        <p>Adjust the sliders to see the color palettes change instantly on the right.</p>
+
+        <div id="controls">
+            
+            <div class="control-section">
+                <h2>Hue Calculation Controls</h2>
+                <div class="control-group">
+                    <label for="goldenAngle">Golden Angle (°):</label>
+                    <input type="range" id="goldenAngle" min="0" max="360" step="0.001" value="137.508" oninput="updatePalette()">
+                    <output for="goldenAngle" id="goldenAngleValue">137.508</output>
+                </div>
+
+                <div class="control-group">
+                    <label for="hueOffset">Starting Hue Offset (°):</label>
+                    <input type="range" id="hueOffset" min="0" max="360" step="1" value="240" oninput="updatePalette()">
+                    <output for="hueOffset" id="hueOffsetValue">240</output>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h2>Light Theme Parameters (S & V)</h2>
+                <div class="control-group">
+                    <label for="lightSaturation">Saturation (S):</label>
+                    <input type="range" id="lightSaturation" min="0.1" max="1" step="0.01" value="0.4" oninput="updatePalette()">
+                    <output for="lightSaturation" id="lightSaturationValue">0.40</output>
+                </div>
+
+                <div class="control-group">
+                    <label for="lightValue">Value/Brightness (V):</label>
+                    <input type="range" id="lightValue" min="0.1" max="1" step="0.01" value="0.9" oninput="updatePalette()">
+                    <output for="lightValue" id="lightValueValue">0.90</output>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h2>Dark Theme Parameters (S & V)</h2>
+                <div class="control-group">
+                    <label for="darkSaturation">Saturation (S):</label>
+                    <input type="range" id="darkSaturation" min="0.1" max="1" step="0.01" value="0.6" oninput="updatePalette()">
+                    <output for="darkSaturation" id="darkSaturationValue">0.60</output>
+                </div>
+
+                <div class="control-group">
+                    <label for="darkValue">Value/Brightness (V):</label>
+                    <input type="range" id="darkValue" min="0.1" max="1" step="0.01" value="0.65" oninput="updatePalette()">
+                    <output for="darkValue" id="darkValueValue">0.65</output>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="right-column">
+        <div id="light-palette-box" class="theme-palette">
+            <h2>Light Theme Palette (20 Accounts)</h2>
+            <ul id="palette-light" class="color-list"></ul>
+        </div>
+        
+        <div id="dark-palette-box" class="theme-palette">
+            <h2>Dark Theme Palette (20 Accounts)</h2>
+            <ul id="palette-dark" class="color-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        // --- Utility function: Converts HSV to RGB Hex ---
+        function hsvToRgb(h, s, v) {
+            let r, g, b;
+            const i = Math.floor(h / 60);
+            const f = h / 60 - i;
+            const p = v * (1 - s);
+            const q = v * (1 - f * s);
+            const t = v * (1 - (1 - f) * s);
+
+            switch (i % 6) {
+                case 0: r = v; g = t; b = p; break;
+                case 1: r = q; g = v; b = p; break;
+                case 2: r = p; g = v; b = t; break;
+                case 3: r = p; g = q; b = v; break;
+                case 4: r = t; g = p; b = v; break;
+                case 5: r = v; g = p; b = q; break;
+                default: r = 0; g = 0; b = 0;
+            }
+
+            const toHex = (c) => {
+                const hex = Math.round(c * 255).toString(16);
+                return hex.length === 1 ? '0' + hex : hex;
+            };
+
+            return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+        }
+        
+        // --- Helper Function: Creates the solid color list item ---
+        function createColorListItem(index, hexColor, hue, saturation, value, isDarkTheme) {
+            const item = document.createElement('li');
+            item.className = 'color-item ' + (isDarkTheme ? 'dark-item' : 'light-item');
+            item.style.backgroundColor = hexColor; 
+
+            const info = document.createElement('div');
+            info.className = 'color-info';
+            info.innerHTML = `
+                <strong>Account #${index}</strong> 
+                <span>Hue: ${hue.toFixed(1)}° | S: ${saturation.toFixed(2)} | V: ${value.toFixed(2)}</span>
+            `;
+
+            item.appendChild(info);
+            
+            return item;
+        }
+
+        // --- Main function to generate and display the color palettes ---
+        function updatePalette() {
+            // 1. Get parameters from controls
+            const goldenAngle = parseFloat(document.getElementById('goldenAngle').value);
+            // This is the control that was moved and relabeled:
+            const hueOffset = parseFloat(document.getElementById('hueOffset').value); 
+
+            // Light Theme Parameters
+            const lightSaturation = parseFloat(document.getElementById('lightSaturation').value);
+            const lightValue = parseFloat(document.getElementById('lightValue').value);
+            
+            // Dark Theme Parameters
+            const darkSaturation = parseFloat(document.getElementById('darkSaturation').value);
+            const darkValue = parseFloat(document.getElementById('darkValue').value);
+
+            const numAccounts = 20;
+
+            // Update output displays
+            document.getElementById('goldenAngleValue').textContent = goldenAngle.toFixed(3);
+            document.getElementById('hueOffsetValue').textContent = hueOffset; // Updated to new location
+            document.getElementById('lightSaturationValue').textContent = lightSaturation.toFixed(2);
+            document.getElementById('lightValueValue').textContent = lightValue.toFixed(2);
+            document.getElementById('darkSaturationValue').textContent = darkSaturation.toFixed(2);
+            document.getElementById('darkValueValue').textContent = darkValue.toFixed(2);
+            
+            const paletteLightList = document.getElementById('palette-light');
+            const paletteDarkList = document.getElementById('palette-dark');
+            paletteLightList.innerHTML = ''; 
+            paletteDarkList.innerHTML = ''; 
+
+            // 2. Loop through the 20 accounts
+            for (let accountIndex = 0; accountIndex < numAccounts; accountIndex++) {
+                
+                // 3. Determine Hue (Color)
+                let hue = ((accountIndex * goldenAngle) + hueOffset) % 360;
+                if (hue < 0) {
+                    hue += 360;
+                }
+
+                // 4. Generate Light Theme Color and List Item (display index + 1)
+                const lightHexColor = hsvToRgb(hue, lightSaturation, lightValue);
+                const lightItem = createColorListItem(accountIndex + 1, lightHexColor, hue, lightSaturation, lightValue, false);
+                paletteLightList.appendChild(lightItem);
+
+                // 5. Generate Dark Theme Color and List Item (display index + 1)
+                const darkHexColor = hsvToRgb(hue, darkSaturation, darkValue);
+                const darkItem = createColorListItem(accountIndex + 1, darkHexColor, hue, darkSaturation, darkValue, true);
+                paletteDarkList.appendChild(darkItem);
+            }
+        }
+
+        // Initialize the palette on page load
+        document.addEventListener('DOMContentLoaded', updatePalette);
+    </script>
+
+</body>
+</html>
