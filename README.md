@@ -67,7 +67,7 @@ Since conversations is relaeased under GPL 3, I gueess this is too.
 
 I wouldn't mind BSD either.
 
-changes
+**Changes**
 
 2025-11-30-1  
 - more changes in colors
