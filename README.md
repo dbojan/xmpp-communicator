@@ -70,10 +70,10 @@ I wouldn't mind BSD either.
 **Changes**
 
 2025-11-30-1  
-- more changes in colors
+- more changes in colors, added more settings for colors
 
 2025-11-29-1  
-- reworked colors for chat, so number of account based colors is unlimited.
+- reworked colors for chat, so number of account based colors is basically unlimited.
     
 
 
