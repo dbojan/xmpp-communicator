@@ -41,7 +41,7 @@ Added features:
 - deploy: default apk
 - ok
 
-- connect phone to pc,
+- connect phone to pc
 - click on play
 
 **How to create/build apk**
