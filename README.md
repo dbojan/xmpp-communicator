@@ -23,12 +23,11 @@ Added features:
 
 -since github is braindead when it comes to adding colors to text, remove + in front of green (added) lines. sorry.  
 
-[howto_add_colors](howto_add_colors.md)
-
 [howto_add_toggle_accounts_from_main_menu](howto_add_toggle_accounts_from_main_menu.md)
 
 [howto_add_custom_sounds_for_messages_based_on_account_index](howto_add_custom_sounds_for_messages_based_on_account_index.md)
 
+[howto_add_colors](howto_add_colors.md)
 
 **How to open source project in android studio:**  
 - open doap file in android studio
