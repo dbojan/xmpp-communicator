@@ -70,16 +70,11 @@ How to use **different colors** in chat, based on accounts:
 +        // 2. Determine Hue (Color)
 +        // We multiply by a "Golden Angle" (approx 137.5 degrees) to ensure
 +        // colors are visually distinct and don't repeat quickly.
-+        float goldenAngle = 137.508f;
++        float goldenAngle = 22f;//137.508f (make colors more in harmony)
 +        float hueOffset = 240f; // Start at Blue (240 degrees) instead of Red (0 degrees)
 
 +        // Applying the offset to shift the entire palette
 +        float hue = ( (accountIndex * goldenAngle) + hueOffset ) % 360;
-
-+        // Simplified Logic for Dark Mode Value (V) Adjustment
-+        // Base Value is 0.65. Range of adjustment is +/- 0.05.
-+        float vBase = 0.65f;
-+        float vRange = 0.05f;
 
 +        // 3. Determine Saturation and Value (Brightness)
 +        // Adjust these based on Dark Mode
