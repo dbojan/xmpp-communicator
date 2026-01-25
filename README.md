@@ -1,6 +1,6 @@
 # xmpp-communicator
 
-2025-11-30-1
+2026-01-25-1
 
 **Fork of conversations xmpp app (https://codeberg.org/iNPUTmice/Conversations), with some added features**
 
@@ -16,6 +16,7 @@ Added features:
 - you can toggle xmpp accounts from the main menu
 - different chat colors based on which account recieved the message  
 - different sounds per account, for recieved messages (this was done so it can be used on older android phones. It uses Notifications/message1.ogg for account1, message2.off for account2 ...)
+- added tts, say sender name, the whole message, or just part say_text message_
 
 ![](pic_small_colors.png) ![](pic_small_accounts.png) 
 
@@ -28,6 +29,8 @@ Added features:
 [howto_add_custom_sounds_for_messages_based_on_account_index](howto_add_custom_sounds_for_messages_based_on_account_index.md)
 
 [howto_add_colors](howto_add_colors.md)
+
+[howto_add_tts](howto_add_tts.md)
 
 **How to open source project in android studio:**  
 - open doap file in android studio
@@ -67,6 +70,9 @@ Since conversations is relaeased under GPL 3, I gueess this is too.
 I wouldn't mind BSD either.
 
 **Changes**
+
+2026-01-25-1  
+- added tts, say sender name, message, or just part say_text message_
 
 2025-11-30-1  
 - more changes in colors, added more settings for colors
