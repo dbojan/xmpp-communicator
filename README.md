@@ -16,7 +16,7 @@ Added features:
 - you can toggle xmpp accounts from the main menu
 - different chat colors based on which account recieved the message  
 - different sounds per account, for recieved messages (this was done so it can be used on older android phones. It uses Notifications/message1.ogg for account1, message2.off for account2 ...)
-- added text to speech (tts), say sender name, the whole message, or just part say_text message_
+- added text to speech (tts), say sender name, the whole message, or just a part: say_text message_
 
 ![](pic_small_colors.png) ![](pic_small_accounts.png) 
 
