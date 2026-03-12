@@ -18,6 +18,8 @@ Added features:
 - different sounds per account, for recieved messages (this was done so it can be used on older android phones. It uses Notifications/message1.ogg for account1, message2.off for account2 ...)
 - added text to speech (tts), say sender name, the whole message, or just a part: say_text message_
 
+- you can also change name of the sender, per chat. just click on sender, then edit, and enter new nickname. (so same sender can be named Jack in one chat and John in another)
+
 ![](pic_small_colors.png) ![](pic_small_accounts.png) ![](pic_small_tts.png) 
 
 **Hhow to add these features yourself:**  
