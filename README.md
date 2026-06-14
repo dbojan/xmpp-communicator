@@ -23,43 +23,6 @@ Added features:
 
 ![](pic_small_colors.png) ![](pic_small_accounts.png) ![](pic_small_tts.png) 
 
-**Hhow to add these features yourself:**  
-
--since github is braindead when it comes to adding colors to text, remove + in front of green (added) lines. sorry.  
-
-[howto_add_toggle_accounts_from_main_menu](howto_add_toggle_accounts_from_main_menu.md)
-
-[howto_add_custom_sounds_for_messages_based_on_account_index](howto_add_custom_sounds_for_messages_based_on_account_index.md)
-
-[howto_add_colors](howto_add_colors.md)
-
-[howto_add_tts](howto_add_tts.md)
-
-**How to open source project in android studio:**  
-- open doap file in android studio
-- click on "Conversations" in the middle of the screen, on the top
-- add configuration
-- edit configuration
-- click on + (add new configuration), select android app
-
-- enter configuration name: test
-- module: conversations
-- deploy: default apk
-- ok
-
-- connect phone to pc
-- click on play
-
-**How to create/build apk**
-
-- (you should delete 'build' folder inside conversations folder first)
-- click ||| menu
-- select "Build" menu on the top right 
-- generate app bundles or apk
-- generate apk
-- look in /home/b/StudioProjects/Conversations/build/outputs/apk/conversationsFree/debug/
-
-
 **Ogg files**
 
 you can create them using ffmpeg
