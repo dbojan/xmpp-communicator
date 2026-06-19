@@ -1,11 +1,11 @@
 # xmpp-communicator
 
-2026-06-14-13-30-00
+2026-06-19-10-34-53
 
 **Fork of conversations xmpp app (https://codeberg.org/iNPUTmice/Conversations), with some added features**
 
 **APK with added features**  
-link to apk file and modified sources: https://drive.google.com/drive/folders/1u-bBpRwNtcxRyvKruBPtkRy73MG1qzbu?usp=sharing  
+link to apk file for arm64-v8a APL file (let me know if you need another arch): https://drive.google.com/drive/folders/1u-bBpRwNtcxRyvKruBPtkRy73MG1qzbu?usp=sharing  
 
 **Make sure you grant storage permission in app properties** (for sounds)
 
@@ -36,6 +36,9 @@ Since conversations is relaeased under GPL 3, I gueess this is too.
 I wouldn't mind BSD either.
 
 **Changes**
+
+2026-06-19-10-34-53
+- small cosmetic changes
 
 2026-06-14-13-30-00  
 - added option browse (to open browser, and click on x,y coordinates)
