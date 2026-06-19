@@ -5,7 +5,7 @@
 **Fork of conversations xmpp app (https://codeberg.org/iNPUTmice/Conversations), with some added features**
 
 **APK with added features**  
-link to apk install file for Android, arch: arm64-v8a (let me know if you need another arch): https://drive.google.com/drive/folders/1u-bBpRwNtcxRyvKruBPtkRy73MG1qzbu?usp=sharing  
+Link to apk install file for Android, arch: arm64-v8a (let me know if you need another arch): https://drive.google.com/drive/folders/1u-bBpRwNtcxRyvKruBPtkRy73MG1qzbu?usp=sharing  
 
 **Make sure you grant storage permission in app properties** (for sounds)
 
